@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category – Quirky Treasures</title>
+  <meta name="description" content="Browse products in a specific category on Quirky Treasures.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Quirky Treasures home">
+        <img src="assets/logo.svg" alt="Quirky Treasures logo" height="40">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="categoryHero">
+      <h1 id="categoryTitle"></h1>
+      <p class="tagline">Browse quirky finds by category.</p>
+      <p class="disclosure-banner">We may earn a commission if you buy through links on this site.</p>
+    </section>
+    <section id="categoryProducts" class="container grid">
+      <!-- Category products inserted here -->
+    </section>
+    <section id="noCategoryResults" class="container" style="display:none;">
+      <p>No products found in this category.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Quirky Treasures. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <p class="affiliate-disclosure">We may earn a commission if you buy through links on this site.</p>
+  </footer>
+  <script src="assets/csv.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof loadCategoryPage === 'function') {
+        loadCategoryPage();
+      }
+    });
+  </script>
+</body>
+</html>

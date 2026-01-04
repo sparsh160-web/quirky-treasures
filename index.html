@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quirky Treasures – Whacky Finds You Might Buy</title>
+  <meta name="description" content="Discover quirky, fun products you don't need but might buy anyway. Curated whacky finds with affiliate links.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- Site header with navigation -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Quirky Treasures home">
+        <img src="assets/logo.svg" alt="Quirky Treasures logo" height="40">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- Hero section -->
+    <section class="hero">
+      <h1>Quirky Treasures</h1>
+      <p class="tagline">Stuff you don’t need but might buy anyway.</p>
+      <p class="disclosure-banner">We may earn a commission if you buy through links on this site.</p>
+    </section>
+
+    <!-- Warning banner for CSV fetch errors -->
+    <section id="warningBanner" class="warning-banner" style="display:none;">
+      <div class="container">
+        <p id="warningMessage"></p>
+        <button id="retryBtn">Retry</button>
+      </div>
+    </section>
+
+    <!-- Search and filters -->
+    <section class="search-filter container">
+      <input type="search" id="searchInput" placeholder="Search finds…" aria-label="Search products">
+      <div class="filters">
+        <select id="filterCategory" aria-label="Category filter">
+          <option value="">All categories</option>
+        </select>
+        <select id="filterPrice" aria-label="Price filter">
+          <option value="">Price: All</option>
+          <option value="under-499">Under ₹499</option>
+          <option value="500-999">₹500–₹999</option>
+          <option value="1000-1999">₹1 000–₹1 999</option>
+          <option value="2000-plus">₹2 000+</option>
+        </select>
+        <select id="filterPlatform" aria-label="Platform filter">
+          <option value="">All platforms</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Flipkart">Flipkart</option>
+          <option value="Other">Other</option>
+        </select>
+        <label class="featured-toggle"><input type="checkbox" id="filterFeatured"> Featured</label>
+        <select id="sortBy" aria-label="Sort results">
+          <option value="latest">Latest</option>
+          <option value="price-low-high">Price low–high</option>
+          <option value="price-high-low">Price high–low</option>
+          <option value="popular">Popular</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Products grid -->
+    <section id="productsSection" class="container grid">
+      <!-- Cards are injected here by app.js -->
+    </section>
+    <section id="noResults" class="container" style="display:none;">
+      <p>No matches found. Try adjusting your search or filters.</p>
+    </section>
+
+    <!-- FAQ section for SEO -->
+    <section class="faq container">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Where do you find these products?</summary>
+        <p>We scour marketplaces and quirky shops to bring you the most unusual items we can find. Many of our links are affiliates, which means we may earn a small commission at no extra cost to you.</p>
+      </details>
+      <details>
+        <summary>How often is the catalog updated?</summary>
+        <p>Our catalog updates automatically whenever you update your Google Sheet. Simply add or modify rows in your sheet and publish as CSV, and the changes will appear here after a refresh.</p>
+      </details>
+      <details>
+        <summary>How do I submit a product idea?</summary>
+        <p>Head over to the contact page and use our “Submit a find” form to suggest your favourite whacky items.</p>
+      </details>
+      <details>
+        <summary>What if a link is broken?</summary>
+        <p>If you encounter a broken link or problem, please contact us via the contact page so we can fix it. Thank you!</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Quirky Treasures. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <p class="affiliate-disclosure">We may earn a commission if you buy through links on this site.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/csv.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    // initialise the site on load
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // load products and set up filters
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof loadCatalog === 'function') {
+        loadCatalog();
+      }
+    });
+  </script>
+</body>
+</html>

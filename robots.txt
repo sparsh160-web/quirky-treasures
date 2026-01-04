@@ -1,0 +1,7 @@
+# Robots exclusion file
+# Allow all crawlers to access content
+User-agent: *
+Allow: /
+
+# Point to sitemap (update the domain after deployment)
+Sitemap: https://example.com/sitemap.xml

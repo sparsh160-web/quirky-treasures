@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Quirky Treasures</title>
+  <meta name="description" content="Learn how we handle your data on Quirky Treasures.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Quirky Treasures home">
+        <img src="assets/logo.svg" alt="Quirky Treasures logo" height="40">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container page-content">
+    <h1>Privacy Policy</h1>
+    <p>We respect your privacy and strive to minimise data collection. Because this site is static, we do not collect personal information about visitors. We do not run a database or store cookies beyond those required for basic analytics (if enabled).</p>
+    <p>The product data you see is loaded from a Google Sheet that you control. When you publish the sheet as a CSV and paste the link into our configuration, your browser fetches the data directly. This means no product information is sent to our servers.</p>
+    <p>If you choose to use our contact form or submit a new product idea, you may be asked to provide information such as your name or email address. This information is processed by Google Forms and subject to their privacy policy.</p>
+    <p>Affiliate partners (such as Amazon or Flipkart) may collect information in order to track purchases. These partners have their own privacy policies which apply when you click on their links. We encourage you to review those policies before making a purchase.</p>
+    <p>If you have any questions about how we handle data, please reach out via the <a href="contact.html">contact page</a>.</p>
+  </main>
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Quirky Treasures. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <p class="affiliate-disclosure">We may earn a commission if you buy through links on this site.</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

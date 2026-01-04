@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product – Quirky Treasures</title>
+  <!-- Meta tags will be replaced at runtime via JS for SEO/share -->
+  <meta name="description" content="View details about this product.">
+  <meta property="og:title" content="Quirky Treasures product">
+  <meta property="og:description" content="Discover a whacky find.">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Quirky Treasures home">
+        <img src="assets/logo.svg" alt="Quirky Treasures logo" height="40">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="productContainer" class="container product-detail">
+      <p class="loading">Loading product…</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Quirky Treasures. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <p class="affiliate-disclosure">We may earn a commission if you buy through links on this site.</p>
+  </footer>
+  <script src="assets/csv.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof loadProductPage === 'function') {
+        loadProductPage();
+      }
+    });
+  </script>
+</body>
+</html>
